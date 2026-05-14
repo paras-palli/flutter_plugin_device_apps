@@ -11,10 +11,8 @@ import 'model/application_event.dart';
 /// Plugin to list applications installed on an Android device
 /// iOS is not supported
 class DeviceApps {
-  static const MethodChannel _methodChannel =
-      MethodChannel('g123k/device_apps');
-  static const EventChannel _eventChannel =
-      EventChannel('g123k/device_apps_events');
+  static const MethodChannel _methodChannel = MethodChannel('g123k/device_apps');
+  static const EventChannel _eventChannel = EventChannel('g123k/device_apps_events');
 
   /// List installed applications on the device
   /// [includeSystemApps] will also include system apps (or pre-installed) like
@@ -25,9 +23,9 @@ class DeviceApps {
   /// [onlyAppsWithLaunchIntent] will only list applications when an entrypoint.
   /// It is similar to what a launcher will display
   static Future<List<Application>> getInstalledApplications({
-    bool includeSystemApps: false,
-    bool includeAppIcons: false,
-    bool onlyAppsWithLaunchIntent: false,
+    bool includeSystemApps = false,
+    bool includeAppIcons = false,
+    bool onlyAppsWithLaunchIntent = false,
   }) async {
     try {
       final Object apps =
